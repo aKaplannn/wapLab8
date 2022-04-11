@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // QUESTION 2
+        function Student(firstName, lastName, grades = []) { this.firstName = firstName; this.lastName = lastName; this.grades = grades; }
+        Student.prototype.inputNewGrade = function (newGrade) { this.grades.push(newGrade); }
+        Student.prototype.computeAverageGrade = function () { return this.grades.reduce((sum, current, index, array) => sum + current / array.length, 0); }
+        const s1 = new Student('Bill', 'Carson');
+        s1.inputNewGrade(20);
+        s1.inputNewGrade(90);
+        s1.inputNewGrade(70);
+        s1.inputNewGrade(30);
+        const s2 = new Student('Eva', 'Black');
+        s2.inputNewGrade(40);
+        s2.inputNewGrade(50);
+        s2.inputNewGrade(60);
+        s2.inputNewGrade(80);        
+        console.log(average = [s1, s2].reduce((average, stu, index, array) => average + stu.computeAverageGrade() / array.length, 0));
+        setTimeout(function () { document.getElementById('one').innerHTML += 'The average is ' + average; }, 111);
+    </script>
+</head>
+<body>
+    <span id="one">Solution 2<br></span>
+</body>
+</html>

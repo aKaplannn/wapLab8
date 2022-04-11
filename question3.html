@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // QUESTION 3
+        Array.prototype.mysort = function ()
+        {
+            for (let i = this.length - 1; i >= 0; i--)
+                for (let j = 1; j <= i; j++)                
+                    if (this[j - 1] > this[j])
+                    {
+                        let temp = this[j - 1];
+                        this[j - 1] = this[j];
+                        this[j] = temp;
+                    }                          
+            return this;
+        }
+        console.log(array = [8, 1, 12, 4, 13, 9, 33, 7, 10, 6, 3].mysort());        setTimeout(function () { document.getElementById('one').innerHTML += 'The sorted array is ' + array; }, 111);    </script>
+</head>
+<body>
+    <span id="one">Solution 3<br></span>
+</body>
+</html>
